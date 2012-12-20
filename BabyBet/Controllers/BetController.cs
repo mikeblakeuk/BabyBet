@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BabyBet.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,28 @@ namespace BabyBet.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var e = new BabyBet1Entities();
+
+
+            return View(e.Bets);
+        }
+
+        public ActionResult Create()
+        {
+            return View(new Bet());
+        }
+
+        [HttpPost]
+        public ActionResult Create(Bet newBet)
+        {
+            if (base.ModelState.IsValid)
+            {
+                var e = new BabyBet1Entities();
+                e.Bets.Add(newBet);
+                e.SaveChanges();
+                Redirect("Index");
+            }
+            return View(newBet); 
         }
 
     }
