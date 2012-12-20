@@ -15,7 +15,7 @@ namespace BabyBet.Models
     public partial class Bet
     {
         public int BetId { get; set; }
-        public Nullable<System.DateTime> BirthDate { get; set; }
+        public Nullable<System.DateTimeOffset> BirthDate { get; set; }
         public Nullable<double> Weight { get; set; }
         public Nullable<bool> IsMale { get; set; }
     }

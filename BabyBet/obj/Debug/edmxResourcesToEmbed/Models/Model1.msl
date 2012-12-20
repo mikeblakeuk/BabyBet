@@ -4,10 +4,10 @@
     <EntitySetMapping Name="Bets">
       <EntityTypeMapping TypeName="BabyBet1Model.Bet">
         <MappingFragment StoreEntitySet="Bet">
-          <ScalarProperty Name="BetId" ColumnName="BetId" />
-          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-          <ScalarProperty Name="Weight" ColumnName="Weight" />
           <ScalarProperty Name="IsMale" ColumnName="IsMale" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="BetId" ColumnName="BetId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

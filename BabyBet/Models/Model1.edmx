@@ -4,21 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BabyBet1Model.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="BabyBet1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="BabyBet1ModelStoreContainer">
-          <EntitySet Name="Bet" EntityType="BabyBet1Model.Store.Bet" store:Type="Tables" />
+          <EntitySet Name="Bet" EntityType="BabyBet1Model.Store.Bet" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Bet">
           <Key>
             <PropertyRef Name="BetId" />
           </Key>
-          <Property Name="BetId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="BetId" Type="int" Nullable="false" />
+          <Property Name="BirthDate" Type="datetimeoffset" />
           <Property Name="Weight" Type="float" />
           <Property Name="IsMale" Type="bit" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BabyBet1Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -29,10 +28,10 @@
           <Key>
             <PropertyRef Name="BetId" />
           </Key>
-          <Property Name="BetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BirthDate" Type="DateTime" Precision="3" />
-          <Property Name="Weight" Type="Double" />
-          <Property Name="IsMale" Type="Boolean" />
+          <Property Type="Int32" Name="BetId" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="BirthDate" Precision="7" />
+          <Property Type="Double" Name="Weight" />
+          <Property Type="Boolean" Name="IsMale" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -40,13 +39,13 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BabyBet1ModelStoreContainer" CdmEntityContainer="BabyBet1Entities">
-          <EntitySetMapping Name="Bets">
+        <EntitySetMapping Name="Bets">
             <EntityTypeMapping TypeName="BabyBet1Model.Bet">
               <MappingFragment StoreEntitySet="Bet">
-                <ScalarProperty Name="BetId" ColumnName="BetId" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
                 <ScalarProperty Name="IsMale" ColumnName="IsMale" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="BetId" ColumnName="BetId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

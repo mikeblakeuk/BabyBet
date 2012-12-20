@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="64cfe2cb00c74e25a0db690ad9ff4d39" Name="Diagram1">
-        <EntityTypeShape EntityType="BabyBet1Model.Bet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BabyBet1Model.Bet" Width="1.5" PointX="3.445089358578012" PointY="29.081602363419535" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

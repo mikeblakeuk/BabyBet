@@ -7,9 +7,9 @@
     <Key>
       <PropertyRef Name="BetId" />
     </Key>
-    <Property Name="BetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BirthDate" Type="DateTime" Precision="3" />
-    <Property Name="Weight" Type="Double" />
-    <Property Name="IsMale" Type="Boolean" />
+    <Property Type="Int32" Name="BetId" Nullable="false" />
+    <Property Type="DateTimeOffset" Name="BirthDate" Precision="7" />
+    <Property Type="Double" Name="Weight" />
+    <Property Type="Boolean" Name="IsMale" />
   </EntityType>
 </Schema>
